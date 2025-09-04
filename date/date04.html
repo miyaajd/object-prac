@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>Select Weather</h1>
+    <form class="date-form">
+      <label for="date">Select Weather : </label>
+      <input type="date" id="date" required />
+      <button type="submit">submit</button>
+    </form>
+    <div class="display">
+      <!-- js -->
+    </div>
+    <script>
+      const form = document.querySelector(".date-form");
+      const display = document.querySelector(".display");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // console.log("submit");
+        const selectDate = new Date(document.querySelector("#date").value);
+        console.log(selectDate);
+        const formDate = selectDate.toLocaleDateString();
+        console.log(formDate);
+        const now = new Date().toLocaleString();
+        console.log(now);
+        display.innerHTML += `
+        <p>
+        <strong>Selected Date : ${formDate}</strong><br>
+        [Sebmited Time : ${now}]
+    </p>
+        `;
+      });
+    </script>
+  </body>
+</html>

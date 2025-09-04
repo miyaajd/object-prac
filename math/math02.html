@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>당첨자 발표</h1>
+    <script>
+      const seed = prompt("전체 응모자 수");
+      // console.log(seed);
+      const picked = Math.floor(Math.random() * seed + 1);
+      console.log(picked);
+      document.write(`전체 인원수 : ${seed}명 <br>`)
+      document.write(`당첨자 번호 : ${picked}번 <br>`)
+    </script>
+  </body>
+</html>

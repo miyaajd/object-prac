@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        name: {
+          firstName: "dongmi",
+          lastName: "jin",
+        },
+        likes: ["wine", "trip"],
+        printHello: function () {
+          return "hello";
+        },
+        age: 28,
+      };
+      console.log(person["name"]);
+      console.log(person["name"]["firstName"]);
+      console.log(person.name.firstName);
+      console.log(person["likes"][0]);
+      console.log(person.likes[0]);
+      console.log(person.likes[1]);
+      console.log(person["printHello"]());
+      console.log(person.printHello());
+      console.log(person.age);
+      person.age = 30;
+      console.log(person.age);
+      const userName = {};
+      console.log(userName);
+      userName.name = "dongmi";
+      console.log(userName.name);
+      delete userName.name;
+      console.log(userName);
+      //깊은복사
+      let num = 10 
+      console.log(num);
+      let copyNum = num
+      console.log(copyNum ,num);
+      num = 20
+      console.log(num);
+      console.log(copyNum);
+      
+      
+      
+    </script>
+  </body>
+</html>

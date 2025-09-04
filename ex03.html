@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 얕은복사
+      const person = {
+        name: "dongmi",
+      };
+      console.log(person);
+
+      const copyPerson = person;
+      console.log(copyPerson);
+      person.name = "jin";
+      console.log(person.name);
+      console.log(copyPerson);
+    </script>
+  </body>
+</html>

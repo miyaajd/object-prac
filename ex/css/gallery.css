@@ -1,0 +1,28 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.wrap{
+    width: 600px;
+    margin: 50px auto;
+}
+.thumbImg{
+    width: 100%;
+}
+.thumbImg li{
+    display: flex;
+    width: calc(100% / 5);
+}

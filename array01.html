@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const arr = [10, 20, 30];
+      //   for (let i = 0; i < arr.length; i++) {
+      //     console.log(arr[i]);
+      //   }
+      const arr = [1, 2, 3, 4, 5];
+      // console.log(arr);
+      // length 속성
+      console.log(`length : ${arr.length}`);
+      // push() : 배열끝에 요소를 추가
+      arr.push(6);
+      console.log(`push() : ${arr}`);
+      // pop() : 배열 끝에 요소를 제거
+      arr.pop();
+      console.log(`pop() : ${arr}`);
+      // shift() : 배열 맨앞의 데이터 제거
+      arr.shift();
+      console.log(`shift() : ${arr}`);
+      // unshift() : 배열 맨 앞에 요소를 추가
+      arr.unshift(0);
+      console.log(`unshift() : ${arr}`);
+      //   indexOf() : 요소의 위치 반환 / 숫자 5의 인덱스 번호 반환
+      console.log(`indexOf 3 : ${arr.indexOf(5)}`);
+      //slice() : 배열 일부 반환 - 비파괴적 메서드 (반환만 할뿐 배열은 변화없음)
+      console.log(arr.slice(1, 4));
+      // splice() : 배열 일부를 삭제 / 추가 / 변경 - 파괴적 메서드
+      arr.splice(2, 2, 100, 7); //인덱스 번호 2번부터 2개를 지우고 그자리에 100과 7을 넣는다
+      console.log(`splice : ${arr}`); //[0,2,3,4,5] → [0,2,100,7,5]
+      // sort() : 요소정렬
+      console.log(`sort : ${arr.sort()}`); //sort : 0,100,2,5,7
+      //숫자 크기대로 정렬하려면
+      console.log(`sort (num크기) : ${arr.sort((a, b) => a - b)}`); //sort (num) : 0,2,5,7,100
+      console.log(`sort (num크기역순) : ${arr.sort((a, b) => b - a)}`); //sort (num크기역순) : 100,7,5,2,0
+      // reverse() : 요소 역순정렬
+      console.log(`reverse : ${arr.reverse()}`);
+    </script>
+  </body>
+</html>

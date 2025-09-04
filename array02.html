@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // -비파괴적 메서드
+      const arr = [1, 2, 3, 4, 5];
+      //  map() : 각 요소에 함수 적용 후 새 배열 반환
+      console.log(
+        `map : ${arr.map((x) => {
+          console.log(x);
+          return x * 3;
+        })}`
+      ); //map : 3,6,9,12,15
+      console.log(arr);
+
+      //  filter() : 조건 만족하는 요소만 모아서 새배열로 반환
+      console.log(`filter : ${arr.filter((x)=> {return x > 2})}`); //filter : 3,4,5
+      console.log(arr);
+      // find() : 조건 만족 첫번째 요소반환
+      console.log(`find : ${arr.find((x)=> {return x > 2})}`); //find : 3
+      // indexOf() : 특정 요소 위치 반환
+      console.log(`indexOf : ${arr.indexOf(3)}`); //indexOf : 2
+      // includes() : 특정 요소 포함 여부 반환
+      console.log(`includes : ${arr.includes(3)}`); //includes : true
+      console.log(`includes : ${arr.includes(7)}`); //includes : false
+      // join() : 요소를 합친다
+      console.log(`join : ${arr.join("-")}`); //join : 1-2-3-4-5
+      // foreach() :
+      arr.forEach((x)=>{console.log(x * 3);}) // map은 배열로 반환 forEach는 각 요소로 반환
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Products List</h1>
+    <!-- 상품출력 -->
+    <div id="product-list">
+      <!-- js출력 -->
+    </div>
+    <h2>filter() :10만원 이상 상품만 출력</h2>
+    <div id="expensive-list">
+      <!-- js출력 -->
+    </div>
+    <script>
+      const products = [
+        { id: 1, name: "노트북", price: 1200000 },
+        { id: 2, name: "마우스", price: 25000 },
+        { id: 3, name: "키보드", price: 55000 },
+        { id: 4, name: "모니터", price: 350000 },
+      ];
+      function reHtml(list) {
+        // console.log(list);
+        return list
+          .map((l) => {
+            return `
+       <div class="product">
+        <h2>${l.name}</h2>
+        <p>가격 : ${l.price.toLocaleString()} 원</p>
+       </div>
+        `;
+          })
+          .join("");
+      }
+      // 전체상품출력
+      const productList = document.querySelector("#product-list");
+      productList.innerHTML = reHtml(products);
+      // 10만원 이상만 출력
+      const expensive = products.filter((p) => {
+        return p.price >= 100000;
+      });
+      const expensiveList = document.querySelector("#expensive-list");
+      expensiveList.innerHTML = reHtml(expensive);
+      // console.log(expensive);
+    </script>
+  </body>
+</html>

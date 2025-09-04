@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/order.css">
+    <script src="js/order.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form name="order">
+        <fieldset>
+          <legend>Order Info</legend>
+          <ul>
+            <li>
+              <label for="billingName" class="field">Name : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="billingName"
+                name="billingName"
+              />
+            </li>
+            <li>
+              <label for="billingTel" class="field">Tel : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="billingTel"
+                name="billingTel"
+              />
+            </li>
+            <li>
+              <label for="billingAdr" class="field">Address : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="billingAdr"
+                name="billingAdr"
+              />
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+      <form name="ship">
+        <fieldset>
+          <legend>Shipping Info</legend>
+          <ul>
+            <li>
+                <input type="checkbox" name="shippingInfo" id="shippingInfo">
+                <label for="shippingInfo" class="check">Order Info and Shipping Info are the same.</label>
+            </li>
+            <li>
+              <label for="shippingName" class="field">Name : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="shippingName"
+                name="shippingName"
+              />
+            </li>
+            <li>
+              <label for="shippingTel" class="field">Tel : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="shippingTel"
+                name="shippingTel"
+              />
+            </li>
+            <li>
+              <label for="shippingAdr" class="field">Address : </label>
+              <input
+                type="text"
+                class="input-box"
+                id="shippingAdr"
+                name="shippingAdr"
+              />
+            </li>
+          </ul>
+        </fieldset>
+        <button type="submit" class="order">Checkout</button>
+      </form>
+    </div>
+  </body>
+</html>

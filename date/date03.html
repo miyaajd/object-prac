@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="product-list">
+      <div class="product"></div>
+    </div>
+    <script>
+      const products = [
+        { name: "노트북", date: new Date(2025, 1, 15) },
+        { name: "스마트폰", date: new Date(2025, 1, 16) },
+      ];
+      const productList = document.querySelector(".product-list");
+      products.forEach((pro) => {
+        productList.innerHTML += `
+        <h3>${pro.name}</h3>
+            <p>등록일 : ${pro.date.toLocaleDateString()} </p>
+        `;
+      });
+    </script>
+  </body>
+</html>

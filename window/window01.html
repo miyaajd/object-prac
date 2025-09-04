@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 100%;
+        height: 5000px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="printInfo()">window 객체 속성</button>
+    <script>
+      function printInfo() {
+        console.log(`웹브라우저의 넓이(innerWidth) : ${window.innerWidth}`);
+        console.log(`웹브라우저의 높이(innerHeight) : ${window.innerHeight}`);
+        console.log(
+          `웹브라우저의 창의 너비(outerWidth) : ${window.outerWidth}`
+        );
+        console.log(
+          `웹브라우저의 창의 높이(outerEight) : ${window.outerHeight}`
+        );
+        console.log(
+          `웹 브라우저 창 위쪽 면과 모니터 사이의 간격(screenTop,screenY): ${window.screenTop}/${window.screenY}`
+        );
+        console.log(
+          `웹 브라우저 창 왼쪽 면과 모니터 사이의 간격(screenLeft,screenX): ${window.screenLeft}/${window.screenX}`
+        );
+      }
+    </script>
+  </body>
+</html>

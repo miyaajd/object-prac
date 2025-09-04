@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>할인 계산</h1>
+    <div class="result">
+      <!-- js -->
+    </div>
+    <!--  -->
+    <script>
+      const price = 19999;
+      const sale = 0.2;
+      console.log(1 - sale); // 0.85
+      
+      const discountPrice = price * (1 - sale)
+      console.log(discountPrice);
+      const result = document.querySelector(".result")
+      result.innerHTML = `
+      원래 가격 : ${price.toLocaleString()} won <br>
+      할인 가격 : ${discountPrice.toLocaleString()} won <br>
+      반올림 가격 : ${Math.round(discountPrice).toLocaleString()} won <br>
+      올림 가격 : ${Math.ceil(discountPrice).toLocaleString()} won <br>
+      내림 가격 : ${Math.floor(discountPrice).toLocaleString()} won <br>
+      `
+    </script>
+  </body>
+</html>

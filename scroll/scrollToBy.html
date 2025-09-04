@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 5000px;
+        width: 100%;
+      }
+      html{
+        scroll-behavior: smooth;
+      }
+      #by{
+        position: absolute;
+        top: 2000px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="sTo()">scrollTo(100, 200)</button>
+    <button onclick="sBy()" id="by">scrollTo(100, 200)</button>
+    <script>
+      function sTo() {
+        window.scrollTo(0, 2000);
+      }
+      function sBy() {
+        window.scrollBy(0, 500);
+      }
+    </script>
+  </body>
+</html>

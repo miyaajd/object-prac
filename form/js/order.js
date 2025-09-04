@@ -33,6 +33,7 @@ window.addEventListener("load", () => {
       if (confirm("Did you enter the correct info?")) {
         console.log("submit available");
         document.ship.submit();
+        alert("Order Completed ! Thanks : )")
       } else {
         console.log("submit not available");
       }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myForm" name="myForm">
+      <!-- <label for="userName">Name : </label> -->
+      <label>
+        Name :
+        <input type="text" id="userName" name="userName" />
+      </label>
+      <label>
+        Email :
+        <input type="email" id="email" name="email" />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <!-- output -->
+    <div id="result">
+      <!-- js -->
+    </div>
+    <script>
+      const form = document.querySelector("#myForm");
+      const result = document.getElementById("result");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // console.log("sss");
+        // const name = document.querySelector("#userName").value;
+        // const email = document.querySelector("#email").value;
+        // console.log(name, email);
+        const name = myForm.userName.value.trim();
+        const email = myForm.email.value.trim();
+        console.log(name, email);
+        // output
+        result.innerHTML = `<p>Name : ${name}</p>
+       <p>Email : ${email}</p>`;
+       form.reset()
+      });
+    </script>
+  </body>
+</html>

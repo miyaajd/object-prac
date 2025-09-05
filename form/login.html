@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/login.js"></script>
+     <style>
+        *{
+            box-sizing: border-box;
+        }
+      body {
+        font-family: sans-serif;
+        background: #f9fafb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background: #16a34a;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #15803d;
+      }
+      #message {
+        margin-top: 10px;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <div class="form-box">
+      <h2>로그인</h2>
+      <form id="loginForm">
+        <label
+          >이메일<input type="email" id="loginEmail" placeholder="이메일 입력"
+        /></label>
+
+        <label
+          >비밀번호
+          <input type="password" id="loginPassword" placeholder="비밀번호 입력"
+        /></label>
+
+        <button type="submit">로그인</button>
+      </form>
+      <div id="message"></div>
+      <!-- ✅ 회원가입 링크 추가 -->
+      <div class="signup-link">
+        아직 회원이 아니신가요? <a href="signup.html">회원가입하기</a>
+      </div>
+    </div>
+</body>
+</html>

@@ -14,7 +14,7 @@
       </label>
       <label>
         Email :
-        <input type="email" id="email" name="email" />
+        <input type="text" id="email" name="email" />
       </label>
       <button type="submit">Submit</button>
     </form>
@@ -22,9 +22,21 @@
     <div id="result">
       <!-- js -->
     </div>
+    <div id="localStorage_result">
+      <!-- js -->
+    </div>
     <script>
       const form = document.querySelector("#myForm");
       const result = document.getElementById("result");
+      const localStorageResult = document.querySelector("#localStorage_result");
+      //   page-load
+      const savedName = localStorage.getItem("name")
+      const savedEmail = localStorage.getItem("Email");
+    //   console.log(savedEmail);
+    if(savedName && savedEmail){
+        localStorageResult.innerHTML = `<p>savedName : ${savedName}</p>
+       <p>savedEmail : ${savedEmail}</p>`;
+    }
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         // console.log("sss");
@@ -37,7 +49,25 @@
         // output
         result.innerHTML = `<p>Name : ${name}</p>
        <p>Email : ${email}</p>`;
-       form.reset()
+        form.reset();
+        //    blank checked
+        if (name === "" || email === "") {
+          alert("Please fill in the blanks !");
+        }
+        // email 형식검사(type이 text 일때)
+        if (!email.includes("@")) {
+          alert("Your email is wrong.");
+        }
+        // local - save
+        localStorage.setItem("Name", name);
+        localStorage.setItem("Email", email);
+        // get the localstorage-value
+        const savedName = localStorage.getItem("name");
+        const savedEmail = localStorage.getItem("Email");
+        console.log("savedName :", savedName);
+        console.log("savedEmail :", savedEmail);
+
+        
       });
     </script>
   </body>

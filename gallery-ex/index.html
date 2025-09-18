@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="gallery_wrap">
+      <!-- js출력 -->
+    </div>
+    <script>
+      // 비동기 데이터 출력
+      async function loadFallery() {
+        // console.log("호출완료");
+        try {
+          const res = await fetch("/gallery-ex/gallery.json");
+          console.log(res);
+          if (!res.ok) {
+            throw new Error(
+              `데이터 불러오기 실패 :  ${res.status} ${res.statusText}`
+            );
+          }
+          //   정상응답시 JSON 변환 (파싱)
+          const data = await res.json();
+          //   console.log(data);
+          const galleryWrap = document.querySelector(".gallery_wrap");
+          data.forEach((item) => {
+            // console.log(item);
+            galleryWrap.innerHTML += `
+            <div class="gallery_item">
+        <img src="${item.img}" alt="${item.title}" />
+        <div class="item_dscr">
+          <h1>${item.title}</h1>
+          <p>${item.dec}</p>
+        </div>
+      </div>
+      <!-- click => detail modal -->
+      <div class="gallery_detail">
+        <div class="gallery_datail_wrap">
+          <div class="detail_left">
+            <img src="${item.img}" alt="${item.title}" />
+          </div>
+          <div class="detail_right">
+            <div class="content">
+              <h1 class="detail-title">${item.title}</h1>
+              <div class="title-line"></div>
+              <p class="detail-dscr">${item.dec}</p>
+            </div>
+          </div>
+          <button class="close">× Close</button>
+        </div>
+      </div>
+            `;
+          });
+          //   item click
+          const items = document.querySelectorAll(".gallery_item");
+          const details = document.querySelectorAll(".gallery_detail");
+          items.forEach((item, idx) => {
+            // console.log(item,idx);
+            item.addEventListener("click", () => {
+              details[idx].classList.add("active")
+            });
+          });
+          const closeBtn = document.querySelectorAll(".close");
+          closeBtn.forEach((close, idx)=>{
+            close.addEventListener("click",()=>{
+                details[idx].classList.remove("active")
+            })
+          })
+        } catch (err) {
+          console.log("갤러리 로드 실패:", err);
+        }
+      }
+      // 함수 호출
+      loadFallery();
+    </script>
+  </body>
+</html>
